@@ -163,4 +163,8 @@ class TestAlphabet(unittest.TestCase):
 
 if __name__ == "__main__":
     unittest.main()
+<<<<<<< HEAD
     print("DONE!")
+=======
+    print("Done!")
+>>>>>>> 1aa5d9fb2f99a6f15cde3af051cee329db6a8110
