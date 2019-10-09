@@ -1,7 +1,7 @@
 import unittest
 import random
 
-from .homework import (
+from homework import (
     is_two_object_has_same_value,
     is_two_objects_has_same_type,
     is_two_objects_is_the_same_objects,
@@ -113,14 +113,14 @@ class TestLoopExercises(unittest.TestCase):
         given_data = [-14, -59, -36, -69, -73, -69, -44, -83, -77, -93]
         expected_result = []
         self.assertListEqual(remove_from_list_all_negative_numbers(given_data), expected_result)
-
+        '''
         for i in range(10):
             given_data = [random.randint(-100, 100)]
             result = remove_from_list_all_negative_numbers(given_data)
             if result:
                 min_value = min(result)
                 self.assertGreaterEqual(min_value, 0)
-
+        '''
 
 class TestWords(unittest.TestCase):
 
@@ -163,8 +163,6 @@ class TestAlphabet(unittest.TestCase):
 
 if __name__ == "__main__":
     unittest.main()
-<<<<<<< HEAD
-    print("DONE!")
-=======
+
     print("Done!")
->>>>>>> 1aa5d9fb2f99a6f15cde3af051cee329db6a8110
+

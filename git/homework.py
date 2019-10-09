@@ -31,11 +31,9 @@ def is_two_objects_is_the_same_objects(first: Any, second: Any) -> bool:
     If @first and @second has same type should return True
     In another case should return False
     """
-<<<<<<< HEAD
-    return id(first) == id(second)
-=======
+
     return first is second
->>>>>>> 1aa5d9fb2f99a6f15cde3af051cee329db6a8110
+
 
 
 def multiple_ints(first_value: int, second_value: int) -> int:
@@ -137,16 +135,15 @@ def alphabet() -> dict:
         alphabet()
         >>> {"a": 1, "b": 2 ...}
     """
-<<<<<<< HEAD
-    return {i: chr(i+96) for i in range(1, 27)}
-=======
-    result = dict.fromkeys(string.ascii_lowercase, 1)
-    i = 0
-    for x, y in result.items():
-        result[x] = y + i
-        i = i + 1
-    return result
->>>>>>> 1aa5d9fb2f99a6f15cde3af051cee329db6a8110
+
+    # result = dict.fromkeys(string.ascii_lowercase, 1)
+    # i = 0
+    # for x, y in result.items():
+    #     result[x] = y + i
+    #     i = i + 1
+    # return result
+    letter_count = dict(zip(string.ascii_lowercase, [0]*26)
+    return letter_count
 
 
 def simple_sort(data: List[int]) -> List[list]:

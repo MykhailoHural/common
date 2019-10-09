@@ -2,9 +2,13 @@ import math
 
 
 class Rectangle:
+    pass
+
+
     def __init__(self, width, height):
         self.width = width
         self.height = height
+
 
     def get_rectangle_perimeter(self):
         """
@@ -14,6 +18,7 @@ class Rectangle:
         perimeter = (self.width + self.height) * 2
         return perimeter
 
+
     def get_rectangle_square(self):
         """
         Returns rectangle square
@@ -21,6 +26,7 @@ class Rectangle:
         """
         square = self.width * self.height
         return square
+
 
     def get_sum_of_corners(self, number_of_corners):
         """
@@ -34,11 +40,12 @@ class Rectangle:
         if number_of_corners > 4:
             raise ValueError("Rectangle has only 4 corners")
 
-        sum_of_corners = 0
-        for i in range(number_of_corners):
-            sum_of_corners += 90
+        # sum_of_corners = 0
+        # for i in range(number_of_corners):
+        #     sum_of_corners += 90
 
-        return sum_of_corners
+        # return sum_of_corners
+
 
     def get_rectangle_diagonal(self):
         """
@@ -48,6 +55,7 @@ class Rectangle:
         """
         diagonal = math.sqrt(math.pow(self.height, 2) + math.pow(self.width, 2))
         return diagonal
+
 
     def get_radius_of_circumscribed_circle(self):
         """
