@@ -133,11 +133,13 @@ def alphabet() -> dict:
         alphabet()
         >>> {"a": 1, "b": 2 ...}
     """
-    result = dict.fromkeys(string.ascii_lowercase, 1)
-    i = 0
-    for x, y in result.items():
-        result[x] = y + i
-        i = i + 1
+    alph = [chr(i) for i in range(ord('a'), ord('z') + 1)]
+    info = []
+    p = 1
+    for i in alph:
+        info.append((p, i))
+        p += 1
+    result = dict(info)
     return result
 
 
