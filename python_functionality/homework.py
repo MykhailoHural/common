@@ -25,7 +25,10 @@ def task_2_remove_dict_fields(data: DT, redundant_keys: List[str]) -> DT:
        remove_dict_field([{'name': 'Alex', 'age': 26}, {'name': 'denys', 'age': 89}], 'age')
         >>> [{'name': 'Alex'}, {'name': 'denys'}]
     """
-    pass
+    for i in range(len(data)):
+        for redundant_key in redundant_keys:
+            del data[i][redundant_key]
+    return data
 
 
 def task_3_find_item_via_value(data: DT, value) -> DT:
@@ -35,21 +38,22 @@ def task_3_find_item_via_value(data: DT, value) -> DT:
         find_item_via_value([{'name': 'Alex', 'age': 26}, {'name': 'denys', 'age': 89}], 26)
         >>> [{'name': 'Alex', 'age': 26}]
     """
-    pass
+
+    return [i for i in data if i.get('name') == value]
 
 
 def task_4_min_value_integers(data: List[int]) -> int:
     """
     Find and return minimum value from list
     """
-    pass
+    return min(data) if data else None
 
 
 def task_5_min_value_strings(data: List[Union[str, int]]) -> str:
     """
     Find the longest string
     """
-    pass
+    return min([str(d) for d in data], key=len) if data else None
 
 
 def task_6_min_value_list_of_dicts(data: DT, key: str) -> ST:
@@ -58,21 +62,21 @@ def task_6_min_value_list_of_dicts(data: DT, key: str) -> ST:
     Returns:
 
     """
-    pass
+    return min(data, key=str)
 
 
 def task_7_max_value_list_of_lists(data: List[List[int]]) -> int:
     """
     Find max value from list of lists
     """
-    pass
+    return max(max(data))
 
 
 def task_8_sum_of_ints(data: List[int]) -> int:
     """
     Find sum of all items in given list
     """
-    pass
+    return sum(data)
 
 
 def task_9_sum_characters_positions(text: str) -> int:
@@ -88,7 +92,7 @@ def task_9_sum_characters_positions(text: str) -> int:
         >>> 532
 
     """
-    pass
+    return sum(ord(i) for i in text)
 
 
 def task_10_generator_of_simple_numbers() -> Generator[int, None, None]:
@@ -102,4 +106,10 @@ def task_10_generator_of_simple_numbers() -> Generator[int, None, None]:
         next(a)
         >>> 3
     """
-    pass
+
+    for i in range(2, 200):
+        for j in range(2, i):
+            if i % j == 0:
+                break
+        else:
+            yield i

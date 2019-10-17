@@ -135,7 +135,7 @@ def alphabet() -> dict:
         alphabet()
         >>> {"a": 1, "b": 2 ...}
     """
-<<<<<<< HEAD
+#<<<<<<< HEAD
 
     # result = dict.fromkeys(string.ascii_lowercase, 1)
     # i = 0
@@ -143,9 +143,9 @@ def alphabet() -> dict:
     #     result[x] = y + i
     #     i = i + 1
     # return result
-    letter_count = dict(zip(string.ascii_lowercase, [0]*26)
-    return letter_count
-=======
+    #letter_count = dict(zip(string.ascii_lowercase, [0]*26)
+    #return letter_count
+#=======
     alph = [chr(i) for i in range(ord('a'), ord('z') + 1)]
     info = []
     p = 1
@@ -154,7 +154,7 @@ def alphabet() -> dict:
         p += 1
     result = dict(info)
     return result
->>>>>>> git_homework
+#>>>>>>> git_homework
 
 
 def simple_sort(data: List[int]) -> List[list]:
