@@ -2,7 +2,10 @@ from os import listdir
 
 import psycopg2
 import os
-from relational_database.config import FIXTURES_PATH
+
+from config import FIXTURES_PATH
+
+FIXTURES_PATH
 
 
 def init_tables(cur: psycopg2.connect) -> None:
