@@ -1,6 +1,3 @@
-from typing import List
-
-
 def task_1_add_new_record_to_db(con) -> None:
     """
     Add a record for a new customer from Singapore
@@ -23,8 +20,6 @@ def task_1_add_new_record_to_db(con) -> None:
     with con.cursor() as cursor:
         cursor.execute("""INSERT INTO Customers
                           VALUES (92, 'Thomas', 'David', 'Some Address', 'London', '774', 'Singapore')""")
-
-
 
 
 def task_2_list_all_customers(cur) -> list:
@@ -53,6 +48,7 @@ def task_3_list_customers_in_germany(cur) -> list:
     """
     cur.execute("""SELECT * FROM Customers WHERE Country = 'Germany';""")
     return cur.fetchall()
+
 
 def task_4_update_customer(con):
     """
@@ -165,8 +161,7 @@ def task_12_list_suppliers_from_specified_countries(cur):
 
     Returns: 8 records
     """
-    cur.execute("""SELECT SupplierID, SupplierName, ContactName, City, Country FROM Suppliers WHERE Country = 'USA' 
-    OR Country = 'UK' OR Country = 'Japan';""")
+    cur.execute("""SELECT * FROM Customers WHERE ( Country= 'Germany' OR 'Spain' OR 'USA');""")
     return cur.fetchall()
 
 
@@ -179,11 +174,11 @@ def task_13_list_products_from_sweden_suppliers(cur):
 
     Returns: 3 records
     """
-    cur.execute("""SELECT ProductName 
-                FROM Products 
-                INNER JOIN Suppliers 
-                ON Products.SupplierID = Suppliers.SupplierID 
-                WHERE Country = 'Sweden';""")
+    cur.execute(""" SELECT ProductName 
+                    FROM Products 
+                    INNER JOIN Suppliers 
+                    ON Products.SupplierID = Suppliers.SupplierID 
+                    WHERE Country = 'Sweden';""")
     return cur.fetchall()
 
 
@@ -213,9 +208,9 @@ def task_15_list_customers_with_any_order_or_not(cur):
     Returns: 213 records
     """
     cur.execute("""SELECT CustomerName, ContactName, Country, OrderID
-                        FROM Customers 
-                        LEFT JOIN Orders 
-                        ON Customers.CustomerID = Orders.CustomerID ;""")
+                    FROM Customers 
+                    LEFT JOIN Orders 
+                    ON Customers.CustomerID = Orders.CustomerID ;""")
     return cur.fetchall()
 
 
@@ -228,13 +223,6 @@ def task_16_match_all_customers_and_suppliers_by_country(cur):
 
     Returns: 194 records
     """
-    # cur.execute("""SELECT Customer.CustomerName, Customer.Address, Customer.Country a,
-    #             Supplier.Country ,Supplier.SupplierName
-    #                         FROM Customers
-    #                         FULL JOIN Supplier
-    #                         ON Customer.Country  = Supplier.Country
-    #                         ORDER BY Customer.Country, Supplier.Country;""")
-    # return cur.fetchall()
 
     cur.execute("""SELECT c.CustomerName, c.Address, c.Country as CustomerCountry,
                 s.Country AS SupplierCountry, s.SupplierName
